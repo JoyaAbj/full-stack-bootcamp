@@ -89,6 +89,15 @@ console.log(a <= 3)
 console.log(a <= 2); 
 
 
+//step 8
+let result0 = (5 + 3 * 2)
+let result1 = (10 / 2 + 3)
+let result2 = (10 / (2 + 3))
+console.log (result1, result2)
+ let math = ('first result is 8 second is 2 because of simple basic math and thank you!')
+ console.log (math)
+
+ 
 
 
 
