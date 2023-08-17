@@ -65,6 +65,30 @@ const counter = 3;
   let result = ( 'I am ' + person + ' the ' +  work);
   console.log (result);
 
+  //Step 7
+  const one = 5;
+  const two = 2 ;
+console.log(one == 5);     
+console.log(two== '3'); 
+
+
+
+const num = 3;
+const word = 'hello';
+console.log(num != 2); 
+console.log(word != 'hello'); 
+
+const first = 3;
+console.log(a > 2); 
+
+const second = 3;
+console.log(a >= 3); 
+
+const third = 2;
+console.log(a <= 3) 
+console.log(a <= 2); 
+
+
 
 
 
