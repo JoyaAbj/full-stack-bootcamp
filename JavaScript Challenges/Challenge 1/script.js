@@ -60,6 +60,10 @@ const counter = 3;
   console.log (explanation)
 
   //Step 6
+  let person = ('Joya');
+  let work = ("Architect");
+  let result = ( 'I am ' + person + ' the ' +  work);
+  console.log (result);
 
 
 
