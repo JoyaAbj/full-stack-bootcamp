@@ -54,3 +54,22 @@ function compute (num111, num222, operation) {
     }
 console.log (compute (10, 50, "multiply"));
 console.log (compute (2,0,"divide"));
+
+//step 2
+//Arrow Function
+const squareNumber = (number) => number * number;
+console.log (squareNumber(2));
+
+//Understanding Scopes
+const globalVar = 4;
+console.log (squareNumber(globalVar));
+
+const squareNumber1 = (number1) => {
+    const localVar = 5;
+    return number1*number1;
+}
+console.log(localVar);
+
+
+
+
