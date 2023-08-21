@@ -96,8 +96,8 @@ do {
 const favoriteFruit = ["apple", "banana", "strawberry", "watermelon", "pineapple", "grape", "pear"];
 
 let y = 0;
-while (y < favoriteFruits.length) {
-    const fruit = favoriteFruits[y];
+while (y < favoriteFruit.length) {
+    const fruit = favoriteFruit[y];
     if (fruit.length > 5) {
         console.log(fruit);
     }
