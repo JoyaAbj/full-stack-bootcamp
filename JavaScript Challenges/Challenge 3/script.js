@@ -68,8 +68,40 @@ const squareNumber1 = (number1) => {
     const localVar = 5;
     return number1*number1;
 }
-console.log(localVar);
 
 
+//Step 3
+//for loop
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+//While Loop
+let i = 10;
+
+while (i >= 1) {
+    console.log(i);
+    i--;
+}
+
+// Do-While Loop with Conditionals
+do {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+    i++;
+} while (i <= 10);
+
+//Advanced Loop Challenge
+const favoriteFruit = ["apple", "banana", "strawberry", "watermelon", "pineapple", "grape", "pear"];
+
+let y = 0;
+while (y < favoriteFruits.length) {
+    const fruit = favoriteFruits[y];
+    if (fruit.length > 5) {
+        console.log(fruit);
+    }
+    y++;
+}
 
 
