@@ -7,6 +7,10 @@ const personalInfo = {
     height: "152",
     locations: "Jouret el Ballout",
     nationality: "Lebanese",
+    contactInfo: {
+        email: "joyaaboujaoude@gmail.com",
+        phone: "+961123456",
+    }
 };
 console.log("I am " + personalInfo.name);
 
@@ -35,6 +39,32 @@ console.log (fname);
 console.log (nationality);
 console.log (locations);
 
+//step 4
+const { contactInfo: {email,phone}} = personalInfo;
+console.log (email);
 
+const [FirstNum, SecondNum, ...restofNumbers] = fiveNumbers;
+console.log (FirstNum);
+console.log (SecondNum);
+console.log (restofNumbers);
+
+const user1 = {
+    username: "Omar",
+    mail: "mail@mail.com",
+    age: 30, 
+}
+
+const user2 = {
+    mail: "omar@mail.com",
+    age: 22,
+    hobby: "googling",
+};
+
+const mergedUser = {
+    ...user1,
+    ...user2,
+};
+
+console.log (mergedUser);
 
 
