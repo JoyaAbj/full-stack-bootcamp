@@ -88,4 +88,11 @@ btn.addEventListener('mouseover',  () => {
       console.log('Name:', name);
       console.log('Email:', email);
     });
+
+
+    //step 3
+    let clonedDiv = originalDiv.cloneNode(true);
+    clonedDiv.querySelector('p').textContent ='Cloned';
+    
+    document.body.appendChild(clonedDiv);
     
