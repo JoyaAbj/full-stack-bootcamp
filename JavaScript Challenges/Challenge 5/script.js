@@ -64,8 +64,8 @@ btn.addEventListener('mouseover',  () => {
     btn.style.color = '';
   });
 
-  let originalDiv = document.getElementById('original');
-  originalDiv.addEventListener('click', function(event) {
+  let buttonContainer = document.getElementById('buttonContainer');
+  buttonContainer.addEventListener('click', function(event) {
     let clickedElement = event.target;
     if (clickedElement.tagName === 'BUTTON') {
       console.log('Clicked button text:', clickedElement.textContent);
@@ -91,8 +91,25 @@ btn.addEventListener('mouseover',  () => {
 
 
     //step 3
-    let clonedDiv = originalDiv.cloneNode(true);
-    clonedDiv.querySelector('p').textContent ='Cloned';
     
+    const originalDiv = document.getElementById('original');
+    const cloneButton = document.getElementById('clone-btn');
+    
+    const clonedDiv = originalDiv.cloneNode(true);
+    const originalH1 = document.querySelector('h1');
+    originalH1.textContent = 'Cloned';
     document.body.appendChild(clonedDiv);
+    
+    function toggleClonedDiv() {
+        if (clonedDiv.style.display === 'none') {
+            clonedDiv.style.display = 'block';
+        } else {
+            clonedDiv.style.display = 'none';
+        }
+    }
+    
+    cloneButton.addEventListener('click', toggleClonedDiv);
+  
+
+   
     
