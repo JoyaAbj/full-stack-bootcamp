@@ -49,12 +49,12 @@ for (let i=0; i<headingTags.length; i++) {
 
 //step2
 
-//const btn = document.createElement('button');
-//btn.textContent = 'Click me!';
-//btn.style.height = "50px";
-//btn.style.width = "50%";
-//document.body.appendChild(btn);
-const btn = document.getElementById('btn');
+const btn = document.createElement('button');
+btn.textContent = 'Click me!';
+btn.style.height = "50px";
+btn.style.width = "50%";
+document.body.appendChild(btn);
+
 btn.addEventListener('mouseover',  () => {
     btn.style.backgroundColor = 'red';
     btn.style.color = 'white';
@@ -72,23 +72,46 @@ btn.addEventListener('mouseover',  () => {
     }
   });
 
+  // Create a form element
+    let formElement = document.createElement('form');
 
-  let form = document.getElementById('Form');
+    // Create input element for Name
+    let nameLabel = document.createElement('label');
+    nameLabel.textContent = 'Name:';
+    let nameInput = document.createElement('input');
+    nameInput.setAttribute('type', 'text');
+    nameInput.setAttribute('name', 'name');
+    nameLabel.appendChild(nameInput);
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+    // Create input element for Email
+    let emailLabel = document.createElement('label');
+    emailLabel.textContent = 'Email:';
+    let emailInput = document.createElement('input');
+    emailInput.setAttribute('type', 'email');
+    emailInput.setAttribute('name', 'email');
+    emailLabel.appendChild(emailInput);
 
-      let nameInput = document.getElementById('name');
-      let emailInput = document.getElementById('email');
+    // Create submit button
+    let submitButton = document.createElement('button');
+    submitButton.setAttribute('type', 'submit');
+    submitButton.textContent = 'Submit';
 
-      let name = nameInput.value;
-      let email = emailInput.value;
+    // Append elements to the form
+    formElement.appendChild(nameLabel);
+    formElement.appendChild(document.createElement('br'));
+    formElement.appendChild(emailLabel);
+    formElement.appendChild(document.createElement('br'));
+    formElement.appendChild(submitButton);
 
-      console.log('Submitted data:');
-      console.log('Name:', name);
-      console.log('Email:', email);
+    formElement.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      // Log the data entered by the user
+      console.log('Name:', nameInput.value);
+      console.log('Email:', emailInput.value);
     });
-
+    // Append the form element to the body
+    document.body.appendChild(formElement);
 
     //step 3
     
@@ -109,6 +132,8 @@ btn.addEventListener('mouseover',  () => {
     }
     
     cloneButton.addEventListener('click', toggleClonedDiv);
+
+    
   
 
    
