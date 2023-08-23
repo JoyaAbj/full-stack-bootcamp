@@ -46,3 +46,46 @@ let headingTags = document.querySelectorAll ('h1,h3');
 for (let i=0; i<headingTags.length; i++) {
     headingTags[i].style.fontStyle = 'italic';
 }
+
+//step2
+
+//const btn = document.createElement('button');
+//btn.textContent = 'Click me!';
+//btn.style.height = "50px";
+//btn.style.width = "50%";
+//document.body.appendChild(btn);
+const btn = document.getElementById('btn');
+btn.addEventListener('mouseover',  () => {
+    btn.style.backgroundColor = 'red';
+    btn.style.color = 'white';
+  });
+  btn.addEventListener('mouseout', () => {
+    btn.style.backgroundColor = '';
+    btn.style.color = '';
+  });
+
+  let originalDiv = document.getElementById('original');
+  originalDiv.addEventListener('click', function(event) {
+    let clickedElement = event.target;
+    if (clickedElement.tagName === 'BUTTON') {
+      console.log('Clicked button text:', clickedElement.textContent);
+    }
+  });
+
+
+  let form = document.getElementById('Form');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      let nameInput = document.getElementById('name');
+      let emailInput = document.getElementById('email');
+
+      let name = nameInput.value;
+      let email = emailInput.value;
+
+      console.log('Submitted data:');
+      console.log('Name:', name);
+      console.log('Email:', email);
+    });
+    
