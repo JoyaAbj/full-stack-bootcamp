@@ -133,7 +133,19 @@ btn.addEventListener('mouseover',  () => {
     
     cloneButton.addEventListener('click', toggleClonedDiv);
 
+
+    const butn = document.createElement('button');
+    butn.textContent = 'Remove';
+    document.body.appendChild(butn);
     
+    
+    butn.addEventListener('click', function() {
+      let header = document.querySelector('header');
+      if (header) {
+        header.remove();
+      }
+    });
+
   
 
    
