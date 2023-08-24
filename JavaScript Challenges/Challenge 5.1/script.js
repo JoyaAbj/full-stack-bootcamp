@@ -47,3 +47,56 @@ button.addEventListener("click", function() {
     }
   });
 
+  //step 3
+  const inputs = document.querySelectorAll("input"); // Select all input fields
+
+  inputs.forEach(input => {
+    input.addEventListener("focus", function() {
+      this.style.backgroundColor = "lightyellow"; // Change background color on focus
+    });
+  
+    input.addEventListener("blur", function() {
+      this.style.backgroundColor = ""; // Reset background color on blur (focus lost)
+    });
+  });
+  
+  const form = document.getElementById("myForm");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+  const messageContainer = document.getElementById("message");
+  
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+  
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+  
+    // Validate email
+    if (!validateEmail(email)) {
+      displayMessage("Email address is not valid.", "error");
+      return;
+    }
+  
+    // Validate password and confirm password
+    if (password !== confirmPassword) {
+      displayMessage("Passwords do not match.", "error");
+      return;
+    }
+  
+    // All validations passed, display success message
+    displayMessage("Form submitted successfully!", "success");
+  });
+  
+  function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
+  function displayMessage(message, messageType) {
+    messageContainer.innerHTML = message;
+    messageContainer.className = messageType;
+  }
+
+    
