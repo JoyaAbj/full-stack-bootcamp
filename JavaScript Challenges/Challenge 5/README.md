@@ -40,7 +40,11 @@ Create a button that changes color when you hover over it and reverts back when 
 
 ### Event Delegation
 
+<<<<<<< HEAD
 Target the `div` with id `button container`, and implement a single event listener on the container that listens for clicks on any button, and logs the text content of the clicked button.
+=======
+Target the `div` with id `buttonContainer`, and implement a single event listener on the container that listens for clicks on any button, and logs the text content of the clicked button.
+>>>>>>> e596f4599b4d5e78b0e4ac1e672e8ac868120484
 
 ### Form Data Extraction
 
@@ -52,7 +56,7 @@ Commit: "Challenge 5 - Done with step 2".
 
 ### DOM Cloning
 
-- Clone the `div` with id `original` and append it to the `body`. Change the text of the `h1` to `Cloned`.
+- Clone the `div` with id `original` and append it to the `body`. Change the text of the `p` to `Cloned`.
 - Do the needed changes to make the button with id `clone-btn` work. (It should show the cloned div when clicked, if it is hidden, and hide it when clicked, if it is shown.)
 
 ### Element Removal
