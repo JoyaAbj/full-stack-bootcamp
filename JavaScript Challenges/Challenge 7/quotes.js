@@ -93,44 +93,41 @@ const quotesArray = [
     content:
       "Hell, there are no rules here-- we're trying to accomplish something.",
   },
+  {
+    author: 'Toni Servillo',
+    content: "I think that beauty can injure you to death. It can cause an injury that can never be cured. Or it can so traumatise you, your life changes direction. The beauty of the harmony of nature that is forever lost, or a daily rite that you perform, or diving into the sea for a swim. Those experiences are going to mark you."
+  }
 ];
 
 
-const blockquote = document.createElement('blockquote');
-blockquote.textContent =
-  '"I think that beauty can injure you to death. It can cause an injury that can ' +
-  'never be cured. Or it can so traumatise you, your life changes direction. The ' +
-  'beauty of the harmony of nature that is forever lost, or a daily rite that you ' +
-  'perform, or diving into the sea for a swim. Those experiences are going to ' +
-  'mark you."';
+const container = document.querySelector('.quotes');
 
-const authorDiv = document.createElement('div');
-authorDiv.className = 'author';
-authorDiv.innerHTML = '&mdash; <cite> Toni Servillo </cite>';
-
-
-blockquote.appendChild(authorDiv);
-
-
-document.body.appendChild(blockquote);
-
-function createQuoteElement(quoteText, authorName) {
-  const blockquote = document.createElement('blockquote');
-  blockquote.innerHTML = `
-    "${quoteText}"
-    <div class="author">
-      &mdash;
-      <cite>${authorName}</cite>
-    </div>
-  `;
-  return blockquote;
+function renderQuotes(quotes) {
+  container.innerHTML = ''; 
+  
+  quotes.forEach(quote => {
+    const blockquote = document.createElement('blockquote');
+    blockquote.innerHTML = `
+      "${quote.content}"
+      <div class="author">
+        &mdash;
+        <cite>${quote.author}</cite>
+      </div>
+    `;
+    container.appendChild(blockquote);
+  });
 }
 
+renderQuotes(quotesArray);
 
-const container = document.getElementById('quotes');
+const filterInput = document.getElementById('authorSearch');
 
-// Loop through the quotesArray and add each quote to the container
-quotesArray.forEach(quote => {
-  const quoteElement = createQuoteElement(quote.content, quote.author);
-  container.appendChild(quoteElement);
+filterInput.addEventListener('input', event => {
+  const filterValue = event.target.value.toLowerCase();
+  
+  const filteredQuotes = quotesArray.filter(quote =>
+    quote.author.toLowerCase().includes(filterValue)
+  );
+  
+  renderQuotes(filteredQuotes);
 });
